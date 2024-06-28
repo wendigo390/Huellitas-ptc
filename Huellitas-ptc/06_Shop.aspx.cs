@@ -12,6 +12,13 @@ namespace Huellitas_ptc
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
+
+
+        }
+        protected void Gender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Response.Redirect("06_ShopEsp.aspx");
         }
     }
 }

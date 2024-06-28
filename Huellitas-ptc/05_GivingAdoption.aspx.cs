@@ -13,5 +13,9 @@ namespace Huellitas_ptc
         {
 
         }
+        protected void Gender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Response.Redirect("05_GivingAdoptionEsp.aspx");
+        }
     }
 }

@@ -9,9 +9,9 @@ namespace Huellitas_ptc
 {
     public partial class _04_Adopt : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Gender_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Response.Redirect("04_AdoptEsp.aspx");
         }
     }
 }
