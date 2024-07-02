@@ -107,9 +107,9 @@
                                             <div class=" dropdown-header noti-title">
                                                 <h6 class="text-overflow m-0"></h6>
                                             </div>
-                                            <a href="10_Index_Ajustes.aspx" class="dropdown-item">
+                                            <a href="01_Registro.aspx" class="dropdown-item">
                                                 <i class="ni ni-settings-gear-65"></i>
-                                                <span>Settings</span>
+                                                <span>Sign Up</span>
                                             </a>
                                             <div class="dropdown-divider"></div>
                                             <asp:Button ID="Login" runat="server" Text="Login" class="dropdown-item" OnClick="Loginbutton" />

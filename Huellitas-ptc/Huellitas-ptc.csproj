@@ -79,6 +79,8 @@
     <Content Include="06_Shop.aspx" />
     <Content Include="07_Team.aspx" />
     <Content Include="08_Contact.aspx" />
+    <Content Include="09_Profile.aspx" />
+    <Content Include="10_Settings.aspx" />
     <Content Include="1\pata.png" />
     <Content Include="1\pata1.png" />
     <Content Include="1\usuario.png" />
@@ -1938,6 +1940,20 @@
     </Compile>
     <Compile Include="08_Contact.aspx.designer.cs">
       <DependentUpon>08_Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="09_Profile.aspx.cs">
+      <DependentUpon>09_Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="09_Profile.aspx.designer.cs">
+      <DependentUpon>09_Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="10_Settings.aspx.cs">
+      <DependentUpon>10_Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="10_Settings.aspx.designer.cs">
+      <DependentUpon>10_Settings.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin_01.aspx.cs">
       <DependentUpon>Admin_01.aspx</DependentUpon>
