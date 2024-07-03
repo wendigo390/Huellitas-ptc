@@ -87,7 +87,7 @@
     <Content Include="1\usuario2.png" />
     <Content Include="1\usuario3.png" />
     <Content Include="Admin_01.aspx" />
-    <Content Include="AgregarImagen.aspx" />
+    <Content Include="Admin_02_AgregarImagen.aspx" />
     <Content Include="assets\css\argon-dashboard.css" />
     <Content Include="assets\css\argon-dashboard.min.css" />
     <Content Include="assets\demo\demo.css" />
@@ -1962,12 +1962,12 @@
     <Compile Include="Admin_01.aspx.designer.cs">
       <DependentUpon>Admin_01.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AgregarImagen.aspx.cs">
-      <DependentUpon>AgregarImagen.aspx</DependentUpon>
+    <Compile Include="Admin_02_AgregarImagen.aspx.cs">
+      <DependentUpon>Admin_02_AgregarImagen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AgregarImagen.aspx.designer.cs">
-      <DependentUpon>AgregarImagen.aspx</DependentUpon>
+    <Compile Include="Admin_02_AgregarImagen.aspx.designer.cs">
+      <DependentUpon>Admin_02_AgregarImagen.aspx</DependentUpon>
     </Compile>
     <Compile Include="conexiones.cs" />
     <Compile Include="datos.cs" />
