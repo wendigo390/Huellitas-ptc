@@ -22,28 +22,44 @@ namespace Huellitas_ptc
             }
         }
 
+        public static String sha256_hash(String value)
+        {
+            StringBuilder Sb = new StringBuilder();
+
+            using (SHA256 hash = SHA256Managed.Create())
+            {
+                Encoding enc = Encoding.UTF8;
+                Byte[] result = hash.ComputeHash(enc.GetBytes(value));
+
+                foreach (Byte b in result)
+                    Sb.Append(b.ToString("x2"));
+            }
+
+            return Sb.ToString();
+        }
+
         protected void Button_Login(object sender, EventArgs e)
         {
             string username = txtusuario.Text;
-            string password = txtclave.Text;
+            string password = sha256_hash(txtclave.Text);
             string email = txtusuario.Text;
 
             MySqlConnection conexion = new MySqlConnection("Server=127.0.0.1; database=ptc; Uid=root; pwd=Info2024/*-;");
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM usuarios WHERE (Nombre_Usuario = @username OR Correo = @email) AND Password = @password", conexion);
+            MySqlCommand cmd = new MySqlCommand("SELECT Nombre_Usuario, IdRol FROM usuarios WHERE (Nombre_Usuario = @username OR Correo = @email) AND Password = @password", conexion);
             cmd.Parameters.AddWithValue("@username", username);
-            cmd.Parameters.AddWithValue("@password", EncryptString(password, initVector));
+            cmd.Parameters.AddWithValue("@password", password);
             cmd.Parameters.AddWithValue("@email", email);
 
             conexion.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
 
-            Session["usuario"] = txtusuario.Text;
-
             if (reader.Read())
             {
+                string nombreUsuario = reader["Nombre_Usuario"].ToString();
                 int idRol = Convert.ToInt32(reader["IdRol"]);
 
-                Session["usuario"] = txtusuario.Text;
+                Session["usuario"] = nombreUsuario; // Asigna el nombre de usuario a la variable de sesión
+
                 if (idRol == 3) /*Superadmin*/
                 {
                     alerta.Text = "<script>swal('Success', 'Welcome SuperAdmin', 'success').then(function() {window.location.href = 'SuperAdmin.aspx';});</script>";

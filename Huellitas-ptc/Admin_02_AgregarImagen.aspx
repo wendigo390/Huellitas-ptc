@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AgregarImagen.aspx.cs" Inherits="Huellitas_ptc.AgregarImagen" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_02_AgregarImagen.aspx.cs" Inherits="Huellitas_ptc.AgregarImagen" %>
 
 <!DOCTYPE html>
 <html lang="en">
