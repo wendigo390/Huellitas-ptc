@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -22,23 +23,45 @@ namespace Huellitas_ptc
             }
         }
 
+        public static String sha256_hash(String value)
+        {
+            StringBuilder Sb = new StringBuilder();
+
+            using (SHA256 hash = SHA256Managed.Create())
+            {
+                Encoding enc = Encoding.UTF8;
+                Byte[] result = hash.ComputeHash(enc.GetBytes(value));
+
+                foreach (Byte b in result)
+                    Sb.Append(b.ToString("x2"));
+            }
+
+            return Sb.ToString();
+        }
+
+
         protected void Button_Login(object sender, EventArgs e)
         {
             string username = txtusuario.Text;
-            string password = txtclave.Text;
-            string email = txtusuario.Text;
-
+            string password = sha256_hash(txtclave.Text);
+            string email = txtusuario.Text
             MySqlConnection conexion = new MySqlConnection("Server=127.0.0.1; database=ptc; Uid=root; pwd=Info2024/*-;");
             MySqlCommand cmd = new MySqlCommand("SELECT * FROM usuarios WHERE (Nombre_Usuario = @username OR Correo = @email) AND Password = @password", conexion);
             cmd.Parameters.AddWithValue("@username", username);
-            cmd.Parameters.AddWithValue("@password", EncryptString(password, initVector));
+            cmd.Parameters.AddWithValue("@password",password);
             cmd.Parameters.AddWithValue("@email", email);
-
             conexion.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
+            
+           
+            Session["usuario"] = reader;
 
-            Session["usuario"] = txtusuario.Text;
 
+
+
+            
+            
+            
             if (reader.Read())
             {
                 int idRol = Convert.ToInt32(reader["IdRol"]);
@@ -67,31 +90,8 @@ namespace Huellitas_ptc
                 txtclave.Text = "";
                 txtusuario.Text = "";
             }
+            
         }
 
-        private const string initVector = "huellitasptc2024";
-        // This constant is used to determine the keysize of the encryption algorithm
-        private const int keysize = 256;
-        //Encrypt
-        public static string EncryptString(string plainText, string passPhrase)
-        {
-            byte[] initVectorBytes = Encoding.UTF8.GetBytes(initVector);
-            byte[] plainTextBytes = Encoding.UTF8.GetBytes(plainText);
-            PasswordDeriveBytes password = new PasswordDeriveBytes(passPhrase, null);
-            byte[] keyBytes = password.GetBytes(keysize / 8);
-            RijndaelManaged symmetricKey = new RijndaelManaged();
-            symmetricKey.Mode = CipherMode.CBC;
-            ICryptoTransform encryptor = symmetricKey.CreateEncryptor(keyBytes, initVectorBytes);
-            MemoryStream memoryStream = new MemoryStream();
-            CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write);
-            cryptoStream.Write(plainTextBytes, 0, plainTextBytes.Length);
-            cryptoStream.FlushFinalBlock();
-            byte[] cipherTextBytes = memoryStream.ToArray();
-            memoryStream.Close();
-            cryptoStream.Close();
-            return Convert.ToBase64String(cipherTextBytes);
-
-            //OCUPAR RIJNDAEL-256 BITS
-        }
     }
 }
