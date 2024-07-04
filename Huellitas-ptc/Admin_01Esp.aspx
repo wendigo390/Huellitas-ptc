@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_01.aspx.cs" Inherits="Huellitas_ptc.Admin_01" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_01Esp.aspx.cs" Inherits="Huellitas_ptc.Admin_01Esp" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +62,7 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav">
                     <li class="nav-item  active ">
-                        <a class="nav-link  active " href="./Admin_01.aspx">
+                        <a class="nav-link  active " href="./index.html">
                             <i class="ni ni-tv-2 text-primary"></i>Dashboard
                         </a>
                     </li>
@@ -81,7 +81,7 @@
                 <!-- Divider -->
                 <hr class="my-3">
             </div>
-           
+            <div class=" bg-white bottom">
             </div>
         </div>
     </nav>
@@ -514,7 +514,6 @@
                             </li>
                         </ul>
                     </div>
-
                 </div>
             </footer>
         </div>
