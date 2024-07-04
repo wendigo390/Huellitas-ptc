@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="03_RecuperarCuenta.aspx.cs" Inherits="Huellitas_ptc._03_RecuperarCuenta" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="03_RecuperarCuentaEsp.aspx.cs" Inherits="Huellitas_ptc._03_RecuperarCuentaEsp" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +60,7 @@
 
 
 
-                           
+
                         </ul>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                                 <div class="text-muted text-center mt-2 mb-3">
                                     <br />
                                     <br />
-                                    <h1>Password Recovery</h1>
+                                    <h1>Recuperar Contraseña</h1>
                                     <div class="btn-wrapper text-center">
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
                             <div class="card-body px-lg-5 py-lg-5">
                                 <div class="text-center text-muted mb-4">
                                     <div class="text-center text-muted mb-4">
-                                        <h2>Enter your username or email</h2>
+                                        <h2>Ingrese su Usuario</h2>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3">
@@ -107,14 +107,14 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
-                                        <asp:TextBox ID="txtusuario" runat="server" placeholder="User or email" class="form-control" minlength="3" MaxLength="200" Width="310px"></asp:TextBox>
+                                        <asp:TextBox ID="txtusuario" runat="server" placeholder="Usuario" class="form-control" minlength="3" MaxLength="200" Width="310px"></asp:TextBox>
                                     </div>
                                 </div>
 
                                 <br />
                                 <div class="form-button" runat="server" style="display: flex; justify-content: center;">
                                     
-                                    <asp:Button ID="submit" runat="server" type="submit" Text="Retrieve" class="mybtn" name="" BackColor="#5E72E4" Width="110px" Height="50px" ForeColor="White" OnClick="submit_Click1" />
+                                    <asp:Button ID="submit" runat="server" type="submit" Text="Recuperar " class="mybtn" name="" BackColor="#5E72E4" Width="110px" Height="50px" ForeColor="White" OnClick="submit_Click1" />
                                     <asp:Literal ID="alerta" runat="server"></asp:Literal>
                                 </div>
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Huellitas_ptc.Index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IndexEsp.aspx.cs" Inherits="Huellitas_ptc.IndexEsp" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -32,7 +32,7 @@
                 window.location.reload();
             }
         };
-</script>
+    </script>
  <%--++++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
 </head>
 <body>
@@ -53,7 +53,7 @@
                     <div class="form-group">&nbsp;</div>
                <div style=" position:absolute; left: 1200px; right; 1200px;">
 
-            <a href="IndexEsp.aspx"> <img src="imagen1/mundo.png" /></a>
+            <a href="Index.aspx"> <img src="imagen1/estados-unidos.png" /></a>
       </div>
 
                 </div>
@@ -67,12 +67,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active"><a href="Index.aspx" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="04_Adopt.aspx" class="nav-link">Adopt</a></li>
-                        <li class="nav-item"><a href="05_GivingAdoption.aspx" class="nav-link">Giving Adoption</a></li>
-                        <li class="nav-item"><a href="06_Shop.aspx" class="nav-link">Shop</a></li>
-                        <li class="nav-item"><a href="07_Team.aspx" class="nav-link">Team</a></li>
-                        <li class="nav-item"><a href="08_Contact.aspx" class="nav-link">Contact</a></li>
+                        <li class="nav-item active"><a href="Index.aspx" class="nav-link">Inicio</a></li>
+                        <li class="nav-item"><a href="04_Adopt.aspx" class="nav-link">Adoptar</a></li>
+                        <li class="nav-item"><a href="05_GivingAdoption.aspx" class="nav-link">Dar en Adopción</a></li>
+                        <li class="nav-item"><a href="06_Shop.aspx" class="nav-link">Tienda</a></li>
+                        <li class="nav-item"><a href="07_Team.aspx" class="nav-link">Equipo</a></li>
+                        <li class="nav-item"><a href="08_Contact.aspx" class="nav-link">Contacto</a></li>
 
                     </ul>
                     <div class="form-group">&nbsp;</div>
