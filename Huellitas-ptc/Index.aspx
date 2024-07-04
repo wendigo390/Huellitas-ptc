@@ -48,7 +48,13 @@
                             <a href="08_Contact.aspx" class="mr-2"><span class="fa fa-phone mr-1"></span>+503 7053 1387</a>
                             <a href="08_Contact.aspx"><span class="fa fa-paper-plane mr-1"></span>huellitas.adopt@gmail.com</a>
                         </p>
+
                     </div>
+                    <div class="form-group">&nbsp;</div>
+               <div style=" position:absolute; left: 1200px; right; 1200px;">
+
+            <a href="01_Registro.aspx"> <img src="imagen1/mundo.png" /></a>
+      </div>
 
                 </div>
             </div>
