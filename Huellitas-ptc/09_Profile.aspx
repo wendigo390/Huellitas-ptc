@@ -96,7 +96,8 @@
                                                         <h6 class="mb-0">Username</h6>
                                                     </div>
                                                     <div class="col-sm-9 text-secondary">
-                                                        Kenneth Valdez
+                                                                                    <%= Session["usuario"] %>
+
                                                     </div>
                                                 </div>
                                                 <hr>

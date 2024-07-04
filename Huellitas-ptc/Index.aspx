@@ -25,20 +25,20 @@
     <link rel="stylesheet" href="css/flaticon.css" />
     <link rel="stylesheet" href="css/style.css" />
 
-<%--    javascript para que el usuario se quite al regresar la pagina    --%>
+    <%--    javascript para que el usuario se quite al regresar la pagina    --%>
     <script type="text/javascript">
         window.onpageshow = function (event) {
             if (event.persisted) {
                 window.location.reload();
             }
         };
-</script>
- <%--++++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
+    </script>
+    <%--++++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
 </head>
 <body>
     <form runat="server">
 
-<%--+++++++++++++ start nav ++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
+        <%--+++++++++++++ start nav ++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
 
         <div class="wrap">
             <div class="container">
@@ -49,7 +49,12 @@
                             <a href="08_Contact.aspx"><span class="fa fa-paper-plane mr-1"></span>huellitas.adopt@gmail.com</a>
                         </p>
                     </div>
+                    <div class="form-group">&nbsp;</div>
+                    <div style="position: absolute; left: 1200px; right: 1200px;">
 
+                        <a href="01_Registro.aspx">
+                            <img src="imagen1/mundo.png" /></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -73,60 +78,63 @@
                     <div>
                         <ul class="navbar-nav align-items-center d-none d-md-flex">
 
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <img src="1/usuario3.png" /><a /></a>
-                                        <div class="media align-items-center">
-                                            <div class="media-body ml-2 d-none d-lg-block">
-                                            </div>
-                                        </div>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="1/usuario3.png" /><a /></a>
+                                <div class="media align-items-center">
+                                    <div class="media-body ml-2 d-none d-lg-block">
+                                    </div>
+                                </div>
 
-<%--++++++++++++++++++++++++++ logica de usuario con y sin sesion iniciada ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
+                                <%--++++++++++++++++++++++++++ logica de usuario con y sin sesion iniciada ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
 
-                            <% if (Session["usuario"] != null && !string.IsNullOrEmpty((string)Session["usuario"])) { %>
+                                <% if (Session["usuario"] != null && !string.IsNullOrEmpty((string)Session["usuario"]))
+                                    { %>
 
-                                        <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                                            <div class=" dropdown-header noti-title">
-                                                <h6 class="text-overflow m-0"></h6>
-                                            </div>
-                                            <a href="09_Profile.aspx" class="dropdown-item">
-                                                <i class="ni ni-single-02"></i>
-                                                <span>My profile</span>
-                                            </a>
-                                            <a href="10_Index_Ajustes.aspx" class="dropdown-item">
-                                                <i class="ni ni-settings-gear-65"></i>
-                                                <span>Settings</span>
-                                            </a>
-                                            <div class="dropdown-divider"></div>
-                                            <asp:Button ID="Logoutbtn" runat="server" Text="Logout" class="dropdown-item" OnClick="Logoutbutton" />
-                                            <i class="ni ni-user-run"></i>
-                                        </div>
-                            <% } else {  %>
+                                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                                    <div class=" dropdown-header noti-title">
+                                        <h6 class="text-overflow m-0"></h6>
+                                    </div>
+                                    <a href="09_Profile.aspx" class="dropdown-item">
+                                        <i class="ni ni-single-02"></i>
+                                        <span>My profile</span>
+                                    </a>
+                                    <a href="10_Index_Ajustes.aspx" class="dropdown-item">
+                                        <i class="ni ni-settings-gear-65"></i>
+                                        <span>Settings</span>
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <asp:Button ID="Logoutbtn" runat="server" Text="Logout" class="dropdown-item" OnClick="Logoutbutton" />
+                                    <i class="ni ni-user-run"></i>
+                                </div>
+                                <% }
+                                else
+                                {  %>
 
-                                        <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                                            <div class=" dropdown-header noti-title">
-                                                <h6 class="text-overflow m-0"></h6>
-                                            </div>
-                                            <a href="01_Registro.aspx" class="dropdown-item">
-                                                <i class="ni ni-settings-gear-65"></i>
-                                                <span>Sign Up</span>
-                                            </a>
-                                            <div class="dropdown-divider"></div>
-                                            <asp:Button ID="Login" runat="server" Text="Login" class="dropdown-item" OnClick="Loginbutton" />
-                                            <i class="ni ni-user-run"></i>
-                                        </div>
+                                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                                    <div class=" dropdown-header noti-title">
+                                        <h6 class="text-overflow m-0"></h6>
+                                    </div>
+                                    <a href="01_Registro.aspx" class="dropdown-item">
+                                        <i class="ni ni-settings-gear-65"></i>
+                                        <span>Sign Up</span>
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <asp:Button ID="Login" runat="server" Text="Login" class="dropdown-item" OnClick="Loginbutton" />
+                                    <i class="ni ni-user-run"></i>
+                                </div>
 
-                            <% } %>
-                                    </li>
+                                <% } %>
+                            </li>
                             <%= Session["usuario"] %>
-  <%--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
+                            <%--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
                         </ul>
                     </div>
                 </div>
             </div>
         </nav>
-        
-   <!--++++++++++++++++ END nav ++++++++++++++++++++++++++++++++++++++++++-->
+
+        <!--++++++++++++++++ END nav ++++++++++++++++++++++++++++++++++++++++++-->
 
         <style>
             /* Make the image fully responsive */
