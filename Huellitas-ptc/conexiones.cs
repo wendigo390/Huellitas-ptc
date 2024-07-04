@@ -49,14 +49,14 @@ namespace Huellitas_ptc
         public static int AgregarUsuario(string nombre, string apellido, string usuario, string contra, string correo)
         {
             int retorno = 0;
-            MySqlCommand comando = new MySqlCommand(string.Format("Insert into usuarios (Nombre, Apellido, Nombre_Usuario, Password,Correo, IdRol) values ('{0}','{1}','{2}','{3}','{4}','2')", nombre, apellido, usuario, contra, correo), datos.ObtenerConexion());
+            MySqlCommand comando = new MySqlCommand(string.Format("Insert  into  usuarios  (Nombre,  Apellido,  Nombre_Usuario,  Password, Correo,  IdRol)  values  ('{0}','{1}','{2}','{3}','{4}','2')", nombre, apellido, usuario, contra, correo), datos.ObtenerConexion());
             retorno = comando.ExecuteNonQuery();
 
             return retorno;
         }
 
-        //**************************** Método para agregar imagen ****************************
-        public static int AgregarImagen(string foto)
+            //**************************** Método para agregar imagen ****************************
+            public static int AgregarImagen(string foto)
         {
             MySqlConnection conn = datos.ObtenerConexion();
             int retorno = 0;

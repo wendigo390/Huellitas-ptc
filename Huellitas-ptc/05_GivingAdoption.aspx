@@ -192,8 +192,7 @@
 				<label for="comentario">Comentario:</label>
 				<textarea id="comentario" class="form-input" /></textarea>
 			</div>
-			<button class="form-button" type="submit">Registrar</button>
-		
+			<button class="form-button" type="submit" >Registrar</button>		
 	</div>
 
 

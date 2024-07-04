@@ -1807,6 +1807,7 @@
     <Content Include="fonts\flaticon\font\flaticon.css" />
     <Content Include="fonts\flaticon\font\flaticon.html" />
     <Content Include="fonts\flaticon\font\Flaticon.svg" />
+    <Content Include="FormularioCambioPassword.aspx" />
     <Content Include="imagen1\estados-unidos.png" />
     <Content Include="imagen1\jordi.jpg" />
     <Content Include="imagen1\lindo.jpg" />
@@ -1882,6 +1883,7 @@
     <Content Include="SuperAdmin.aspx" />
     <Content Include="SweetAlert\sweetalert2.all.min.js" />
     <Content Include="SweetAlert\sweetalert2.js" />
+    <Content Include="Token.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1972,6 +1974,13 @@
     <Compile Include="conexiones.cs" />
     <Compile Include="datos.cs" />
     <Compile Include="datos1.cs" />
+    <Compile Include="FormularioCambioPassword.aspx.cs">
+      <DependentUpon>FormularioCambioPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormularioCambioPassword.aspx.designer.cs">
+      <DependentUpon>FormularioCambioPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1987,6 +1996,14 @@
     <Compile Include="SuperAdmin.aspx.designer.cs">
       <DependentUpon>SuperAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Token.aspx.cs">
+      <DependentUpon>Token.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Token.aspx.designer.cs">
+      <DependentUpon>Token.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ValorGlobalOlvidoContra.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="1\descarga.webp" />
