@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="02_LogineEsp.aspx.cs" Inherits="Huellitas_ptc._02_LogineEsp" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="02_LoginEsp.aspx.cs" Inherits="Huellitas_ptc._02_LogineEsp" %>
 
 <!DOCTYPE html>
 <html lang="en">

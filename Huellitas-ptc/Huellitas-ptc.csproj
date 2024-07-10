@@ -74,7 +74,7 @@
     <Content Include="01_Registro.aspx" />
     <Content Include="01_RegistroEsp.aspx" />
     <Content Include="02_Login.aspx" />
-    <Content Include="02_LogineEsp.aspx" />
+    <Content Include="02_LoginEsp.aspx" />
     <Content Include="03_RecuperarCuenta.aspx" />
     <Content Include="03_RecuperarCuentaEsp.aspx" />
     <Content Include="04_Adopt.aspx" />
@@ -1912,12 +1912,12 @@
     <Compile Include="02_Login.aspx.designer.cs">
       <DependentUpon>02_Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="02_LogineEsp.aspx.cs">
-      <DependentUpon>02_LogineEsp.aspx</DependentUpon>
+    <Compile Include="02_LoginEsp.aspx.cs">
+      <DependentUpon>02_LoginEsp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="02_LogineEsp.aspx.designer.cs">
-      <DependentUpon>02_LogineEsp.aspx</DependentUpon>
+    <Compile Include="02_LoginEsp.aspx.designer.cs">
+      <DependentUpon>02_LoginEsp.aspx</DependentUpon>
     </Compile>
     <Compile Include="03_RecuperarCuenta.aspx.cs">
       <DependentUpon>03_RecuperarCuenta.aspx</DependentUpon>

@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="css/flaticon.css" />
     <link rel="stylesheet" href="css/style.css" />
 
-<%--    javascript para que el usuario se quite al regresar la pagina    --%>
+    <%--    javascript para que el usuario se quite al regresar la pagina    --%>
     <script type="text/javascript">
         window.onpageshow = function (event) {
             if (event.persisted) {
@@ -33,12 +33,12 @@
             }
         };
     </script>
- <%--++++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
+    <%--++++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
 </head>
 <body>
     <form runat="server">
 
-<%--+++++++++++++ start nav ++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
+        <%--+++++++++++++ start nav ++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
 
         <div class="wrap">
             <div class="container">
@@ -48,91 +48,93 @@
                             <a href="08_Contact.aspx" class="mr-2"><span class="fa fa-phone mr-1"></span>+503 7053 1387</a>
                             <a href="08_Contact.aspx"><span class="fa fa-paper-plane mr-1"></span>huellitas.adopt@gmail.com</a>
                         </p>
-
                     </div>
                     <div class="form-group">&nbsp;</div>
-               <div style=" position:absolute; left: 1200px; right; 1200px;">
+                    <div style="position: absolute; left: 1200px; right: 1200px;">
 
-            <a href="Index.aspx"> <img src="imagen1/estados-unidos.png" /></a>
-      </div>
-
+                        <a href="Index.aspx">
+                            <img src="imagen1/estados-unidos.png" /></a>
+                    </div>
                 </div>
             </div>
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
             <div class="container">
-                <a class="navbar-brand" href="IndexEsp.aspx"><span class="flaticon-pawprint-1 mr-2"></span>Huellitas</a>
+                <a class="navbar-brand" href="Index.aspx"><span class="flaticon-pawprint-1 mr-2"></span>Huellitas</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="fa fa-bars"></span>Menu
                 </button>
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active"><a href="IndexEsp.aspx" class="nav-link">Inicio</a></li>
-                        <li class="nav-item"><a href="04_AdoptEsp.aspx" class="nav-link">Adoptar</a></li>
-                        <li class="nav-item"><a href="05_GivingAdoptionEsp.aspx" class="nav-link">Dar en Adopción</a></li>
-                        <li class="nav-item"><a href="06_ShopEsp.aspx" class="nav-link">Tienda</a></li>
-                        <li class="nav-item"><a href="07_TeamEsp.aspx" class="nav-link">Equipo</a></li>
-                        <li class="nav-item"><a href="08_ContactEsp.aspx" class="nav-link">Contacto</a></li>
+                        <li class="nav-item active"><a href="Index.aspx" class="nav-link">Inicio</a></li>
+                        <li class="nav-item"><a href="04_Adopt.aspx" class="nav-link">Adoptar</a></li>
+                        <li class="nav-item"><a href="05_GivingAdoption.aspx" class="nav-link">Giving Adoption</a></li>
+                        <li class="nav-item"><a href="06_Shop.aspx" class="nav-link">Shop</a></li>
+                        <li class="nav-item"><a href="07_Team.aspx" class="nav-link">Team</a></li>
+                        <li class="nav-item"><a href="08_Contact.aspx" class="nav-link">Contact</a></li>
 
                     </ul>
                     <div class="form-group">&nbsp;</div>
                     <div>
                         <ul class="navbar-nav align-items-center d-none d-md-flex">
 
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <img src="1/usuario3.png" /><a /></a>
-                                        <div class="media align-items-center">
-                                            <div class="media-body ml-2 d-none d-lg-block">
-                                            </div>
-                                        </div>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="1/usuario3.png" /><a /></a>
+                                <div class="media align-items-center">
+                                    <div class="media-body ml-2 d-none d-lg-block">
+                                    </div>
+                                </div>
 
-<%--++++++++++++++++++++++++++ logica de usuario con y sin sesion iniciada ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
+                                <%--++++++++++++++++++++++++++ logica de usuario con y sin sesion iniciada ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
 
-                            <% if (Session["usuario"] != null && !string.IsNullOrEmpty((string)Session["usuario"])) { %>
+                                <% if (Session["usuario"] != null && !string.IsNullOrEmpty((string)Session["usuario"]))
+                                    { %>
 
-                                        <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                                            <div class=" dropdown-header noti-title">
-                                                <h6 class="text-overflow m-0"></h6>
-                                            </div>
-                                            <a href="./examples/profile.html" class="dropdown-item">
-                                                <i class="ni ni-single-02"></i>
-                                                <span>My profile</span>
-                                            </a>
-                                            <a href="10_Index_Ajustes.aspx" class="dropdown-item">
-                                                <i class="ni ni-settings-gear-65"></i>
-                                                <span>Settings</span>
-                                            </a>
-                                            <div class="dropdown-divider"></div>
-                                            <asp:Button ID="Logoutbtn" runat="server" Text="Logout" class="dropdown-item" OnClick="Logoutbutton" />
-                                            <i class="ni ni-user-run"></i>
-                                        </div>
-                            <% } else {  %>
+                                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                                    <div class=" dropdown-header noti-title">
+                                        <h6 class="text-overflow m-0"></h6>
+                                    </div>
+                                    <a href="09_Profile.aspx" class="dropdown-item">
+                                        <i class="ni ni-single-02"></i>
+                                        <span>My profile</span>
+                                    </a>
+                                    <a href="10_Index_Ajustes.aspx" class="dropdown-item">
+                                        <i class="ni ni-settings-gear-65"></i>
+                                        <span>Settings</span>
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <asp:Button ID="Logoutbtn" runat="server" Text="Logout" class="dropdown-item" OnClick="Logoutbutton" />
+                                    <i class="ni ni-user-run"></i>
+                                </div>
+                                <% }
+                                else
+                                {  %>
 
-                                        <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                                            <div class=" dropdown-header noti-title">
-                                                <h6 class="text-overflow m-0"></h6>
-                                            </div>
-                                            <a href="10_Index_Ajustes.aspx" class="dropdown-item">
-                                                <i class="ni ni-settings-gear-65"></i>
-                                                <span>Settings</span>
-                                            </a>
-                                            <div class="dropdown-divider"></div>
-                                            <asp:Button ID="Login" runat="server" Text="Login" class="dropdown-item" OnClick="Loginbutton" />
-                                            <i class="ni ni-user-run"></i>
-                                        </div>
+                                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                                    <div class=" dropdown-header noti-title">
+                                        <h6 class="text-overflow m-0"></h6>
+                                    </div>
+                                    <a href="01_RegistroEsp.aspx" class="dropdown-item">
+                                        <i class="ni ni-settings-gear-65"></i>
+                                        <span>Sign Up</span>
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <asp:Button ID="Login" runat="server" Text="Login" class="dropdown-item" OnClick="Loginbutton" />
+                                    <i class="ni ni-user-run"></i>
+                                </div>
 
-                            <% } %>
-                                    </li>
+                                <% } %>
+                            </li>
                             <%= Session["usuario"] %>
-  <%--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
+                            <%--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--%>
                         </ul>
                     </div>
                 </div>
             </div>
         </nav>
-        
-   <!--++++++++++++++++ END nav ++++++++++++++++++++++++++++++++++++++++++-->
+
+        <!--++++++++++++++++ END nav ++++++++++++++++++++++++++++++++++++++++++-->
 
         <style>
             /* Make the image fully responsive */
@@ -411,7 +413,97 @@
     	</div>
     </section>--%>
 
-       
+        <section class="ftco-section testimony-section" style="background-image: url('images/bg_2.jpg');">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row justify-content-center pb-5 mb-3">
+                    <div class="col-md-7 heading-section text-center ftco-animate">
+                        <h2>Happy Clients &amp; Feedbacks</h2>
+                    </div>
+                </div>
+                <div class="row ftco-animate">
+                    <div class="col-md-12">
+                        <div class="carousel-testimony owl-carousel ftco-owl">
+                            <div class="item">
+                                <div class="testimony-wrap py-4">
+                                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                                    <div class="text">
+                                        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                        <div class="d-flex align-items-center">
+                                            <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                                            <div class="pl-3">
+                                                <p class="name">Roger Scott</p>
+                                                <span class="position">Marketing Manager</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="testimony-wrap py-4">
+                                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                                    <div class="text">
+                                        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                        <div class="d-flex align-items-center">
+                                            <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                                            <div class="pl-3">
+                                                <p class="name">Roger Scott</p>
+                                                <span class="position">Marketing Manager</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="testimony-wrap py-4">
+                                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                                    <div class="text">
+                                        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                        <div class="d-flex align-items-center">
+                                            <div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
+                                            <div class="pl-3">
+                                                <p class="name">Roger Scott</p>
+                                                <span class="position">Marketing Manager</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="testimony-wrap py-4">
+                                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                                    <div class="text">
+                                        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                        <div class="d-flex align-items-center">
+                                            <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                                            <div class="pl-3">
+                                                <p class="name">Roger Scott</p>
+                                                <span class="position">Marketing Manager</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="testimony-wrap py-4">
+                                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                                    <div class="text">
+                                        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                        <div class="d-flex align-items-center">
+                                            <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                                            <div class="pl-3">
+                                                <p class="name">Roger Scott</p>
+                                                <span class="position">Marketing Manager</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section class="ftco-section bg-light">
             <div class="container">
@@ -570,82 +662,196 @@
             </div>
         </section>
 
-       
-
-        
-
-          <footer class="footer">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-				<%--<h2 class="footer-heading">Huellitas</h2>--%>
-<%--				<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-				<ul class="ftco-footer-social p-0">
-            <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="fa fa-twitter"></span></a></li>
-            <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>
-            <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="fa fa-instagram"></span></a></li>
-          </ul>--%>
-			</div>
-		<%--	<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-				<h2 class="footer-heading">Latest News</h2>
-				<div class="block-21 mb-4 d-flex">
-            <a class="img mr-4 rounded" style="background-image: url(images/image_1.jpg);"></a>
-            <div class="text">
-              <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
-              <div class="meta">
-                <div><a href="#"><span class="icon-calendar"></span> April 7, 2020</a></div>
-                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-              </div>--%>
+        <section class="ftco-section bg-light">
+            <div class="container">
+                <div class="row justify-content-center pb-5 mb-3">
+                    <div class="col-md-7 heading-section text-center ftco-animate">
+                        <h2>Latest news from our blog</h2>
+                    </div>
+                </div>
+                <div class="row d-flex">
+                    <div class="col-md-4 d-flex ftco-animate">
+                        <div class="blog-entry align-self-stretch">
+                            <a href="blog-single.html" class="block-20 rounded" style="background-image: url('images/image_1.jpg');"></a>
+                            <div class="text p-4">
+                                <div class="meta mb-2">
+                                    <div><a href="#">April 07, 2020</a></div>
+                                    <div><a href="#">Admin</a></div>
+                                    <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span>3</a></div>
+                                </div>
+                                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex ftco-animate">
+                        <div class="blog-entry align-self-stretch">
+                            <a href="blog-single.html" class="block-20 rounded" style="background-image: url('images/image_2.jpg');"></a>
+                            <div class="text p-4">
+                                <div class="meta mb-2">
+                                    <div><a href="#">April 07, 2020</a></div>
+                                    <div><a href="#">Admin</a></div>
+                                    <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span>3</a></div>
+                                </div>
+                                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex ftco-animate">
+                        <div class="blog-entry align-self-stretch">
+                            <a href="blog-single.html" class="block-20 rounded" style="background-image: url('images/image_3.jpg');"></a>
+                            <div class="text p-4">
+                                <div class="meta mb-2">
+                                    <div><a href="#">April 07, 2020</a></div>
+                                    <div><a href="#">Admin</a></div>
+                                    <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span>3</a></div>
+                                </div>
+                                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-       <%--   <div class="block-21 mb-4 d-flex">
-            <a class="img mr-4 rounded" style="background-image: url(images/image_2.jpg);"></a>
-            <div class="text">
-              <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
-              <div class="meta">
-                <div><a href="#"><span class="icon-calendar"></span> April 7, 2020</a></div>
-                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-              </div>--%>
-          <%--  </div>
-          </div>
-			</div>
-			<div class="col-md-6 col-lg-3 pl-lg-5 mb-4 mb-md-0">
-				<h2 class="footer-heading">Quick Links</h2>
-				<ul class="list-unstyled">
-            <li><a href="#" class="py-2 d-block">Home</a></li>
-            <li><a href="#" class="py-2 d-block">About</a></li>
-            <li><a href="#" class="py-2 d-block">Services</a></li>
-            <li><a href="#" class="py-2 d-block">Works</a></li>
-            <li><a href="#" class="py-2 d-block">Blog</a></li>
-            <li><a href="#" class="py-2 d-block">Contact</a></li>
-          </ul>--%>
-			<%--</div>--%>
-			<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-				<h2 class="footer-heading">Huellitas</h2>
-				<div class="block-23 mb-3">
-            <ul>
-              <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+503 7053 1387</span></a></li>
-              <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">	huellitas.adopt@gmail.com</span></a></li>
-            </ul>
-          </div>
-			</div>
-		</div>
-		<div class="row mt-5">
-        <div class="col-md-12 text-center">
+        </section>
 
-          <p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-        </div>
-      </div>
-	</div>
-</footer>
+        <section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb img" style="background-image: url(images/bg_3.jpg);">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row d-md-flex justify-content-end">
+                    <div class="col-md-12 col-lg-6 half p-3 py-5 pl-lg-5 ftco-animate">
+                        <h2 class="mb-4">Free Consultation</h2>
+                        <form action="#" class="appointment">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="form-field">
+                                            <div class="select-wrap">
+                                                <div class="icon"><span class="fa fa-chevron-down"></span></div>
+                                                <select name="" id="" class="form-control">
+                                                    <option value="">Select services</option>
+                                                    <option value="">Cat Sitting</option>
+                                                    <option value="">Dog Walk</option>
+                                                    <option value="">Pet Spa</option>
+                                                    <option value="">Pet Grooming</option>
+                                                    <option value="">Pet Daycare</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Your Name" />.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Vehicle number" />.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-wrap">
+                                            <div class="icon"><span class="fa fa-calendar"></span></div>
+                                            <input type="text" class="form-control appointment_date" placeholder="Date" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-wrap">
+                                            <div class="icon"><span class="fa fa-clock-o"></span></div>
+                                            <input type="text" class="form-control appointment_time" placeholder="Time" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="submit" value="Send message" class="btn btn-primary py-3 px-4">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                        <h2 class="footer-heading">Petsitting</h2>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                        <ul class="ftco-footer-social p-0">
+                            <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="fa fa-twitter"></span></a></li>
+                            <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>
+                            <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="fa fa-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                        <h2 class="footer-heading">Latest News</h2>
+                        <div class="block-21 mb-4 d-flex">
+                            <a class="img mr-4 rounded" style="background-image: url(images/image_1.jpg);"></a>
+                            <div class="text">
+                                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
+                                <div class="meta">
+                                    <div><a href="#"><span class="icon-calendar"></span>April 7, 2020</a></div>
+                                    <div><a href="#"><span class="icon-person"></span>Admin</a></div>
+                                    <div><a href="#"><span class="icon-chat"></span>19</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-21 mb-4 d-flex">
+                            <a class="img mr-4 rounded" style="background-image: url(images/image_2.jpg);"></a>
+                            <div class="text">
+                                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
+                                <div class="meta">
+                                    <div><a href="#"><span class="icon-calendar"></span>April 7, 2020</a></div>
+                                    <div><a href="#"><span class="icon-person"></span>Admin</a></div>
+                                    <div><a href="#"><span class="icon-chat"></span>19</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 pl-lg-5 mb-4 mb-md-0">
+                        <h2 class="footer-heading">Quick Links</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="py-2 d-block">Home</a></li>
+                            <li><a href="#" class="py-2 d-block">About</a></li>
+                            <li><a href="#" class="py-2 d-block">Services</a></li>
+                            <li><a href="#" class="py-2 d-block">Works</a></li>
+                            <li><a href="#" class="py-2 d-block">Blog</a></li>
+                            <li><a href="#" class="py-2 d-block">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                        <h2 class="footer-heading">Have a Questions?</h2>
+                        <div class="block-23 mb-3">
+                            <ul>
+                                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+503 7053 1387</span></a></li>
+                                <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">huellitas.adopt@gmail.com</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-12 text-center">
 
-
+                        <p class="copyright">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                            All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i>by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
 
 
@@ -681,3 +887,4 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 </body>
 </html>
+
