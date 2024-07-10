@@ -79,13 +79,15 @@
     <Content Include="06_Shop.aspx" />
     <Content Include="07_Team.aspx" />
     <Content Include="08_Contact.aspx" />
+    <Content Include="09_Profile.aspx" />
+    <Content Include="10_Settings.aspx" />
     <Content Include="1\pata.png" />
     <Content Include="1\pata1.png" />
     <Content Include="1\usuario.png" />
     <Content Include="1\usuario2.png" />
     <Content Include="1\usuario3.png" />
     <Content Include="Admin_01.aspx" />
-    <Content Include="AgregarImagen.aspx" />
+    <Content Include="Admin_02_AgregarImagen.aspx" />
     <Content Include="assets\css\argon-dashboard.css" />
     <Content Include="assets\css\argon-dashboard.min.css" />
     <Content Include="assets\demo\demo.css" />
@@ -1805,6 +1807,7 @@
     <Content Include="fonts\flaticon\font\flaticon.css" />
     <Content Include="fonts\flaticon\font\flaticon.html" />
     <Content Include="fonts\flaticon\font\Flaticon.svg" />
+    <Content Include="FormularioCambioPassword.aspx" />
     <Content Include="imagen1\estados-unidos.png" />
     <Content Include="imagen1\jordi.jpg" />
     <Content Include="imagen1\lindo.jpg" />
@@ -1880,6 +1883,7 @@
     <Content Include="SuperAdmin.aspx" />
     <Content Include="SweetAlert\sweetalert2.all.min.js" />
     <Content Include="SweetAlert\sweetalert2.js" />
+    <Content Include="Token.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1939,6 +1943,20 @@
     <Compile Include="08_Contact.aspx.designer.cs">
       <DependentUpon>08_Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="09_Profile.aspx.cs">
+      <DependentUpon>09_Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="09_Profile.aspx.designer.cs">
+      <DependentUpon>09_Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="10_Settings.aspx.cs">
+      <DependentUpon>10_Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="10_Settings.aspx.designer.cs">
+      <DependentUpon>10_Settings.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin_01.aspx.cs">
       <DependentUpon>Admin_01.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1946,16 +1964,23 @@
     <Compile Include="Admin_01.aspx.designer.cs">
       <DependentUpon>Admin_01.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AgregarImagen.aspx.cs">
-      <DependentUpon>AgregarImagen.aspx</DependentUpon>
+    <Compile Include="Admin_02_AgregarImagen.aspx.cs">
+      <DependentUpon>Admin_02_AgregarImagen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AgregarImagen.aspx.designer.cs">
-      <DependentUpon>AgregarImagen.aspx</DependentUpon>
+    <Compile Include="Admin_02_AgregarImagen.aspx.designer.cs">
+      <DependentUpon>Admin_02_AgregarImagen.aspx</DependentUpon>
     </Compile>
     <Compile Include="conexiones.cs" />
     <Compile Include="datos.cs" />
     <Compile Include="datos1.cs" />
+    <Compile Include="FormularioCambioPassword.aspx.cs">
+      <DependentUpon>FormularioCambioPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormularioCambioPassword.aspx.designer.cs">
+      <DependentUpon>FormularioCambioPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1971,6 +1996,14 @@
     <Compile Include="SuperAdmin.aspx.designer.cs">
       <DependentUpon>SuperAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Token.aspx.cs">
+      <DependentUpon>Token.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Token.aspx.designer.cs">
+      <DependentUpon>Token.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ValorGlobalOlvidoContra.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="1\descarga.webp" />
