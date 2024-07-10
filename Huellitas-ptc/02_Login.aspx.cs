@@ -56,7 +56,7 @@ namespace Huellitas_ptc
                     }
                     else // Usuario
                     {
-                        alerta.Text = "<script>swal('Success', 'Logged In', 'success').then(function() {window.location.href = 'Index.aspx';});</script>";
+                        alerta.Text = "<script>swal('Success', 'Logged In', 'success').then(function() {window.location.href = 'IndexEsp.aspx';});</script>";
                     }
                 }
 
@@ -93,5 +93,6 @@ namespace Huellitas_ptc
 
             //OCUPAR RIJNDAEL-256 BITS
         }
+
     }
-}
+    }

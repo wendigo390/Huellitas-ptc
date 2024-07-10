@@ -16,8 +16,6 @@ namespace Huellitas_ptc
         {
 
         }
-
-
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
             if (txtusuario.Text.Trim() != "" && txtclave.Text.Trim() != "" && txtconfirm.Text.Trim() != "" && txtfirst.Text.Trim() != "" && txtapellido.Text.Trim() != "" && txtgmail.Text.Trim() != "")
@@ -66,8 +64,6 @@ namespace Huellitas_ptc
                 alerta.Text = "<script>Swal.fire('OOPS', 'No deje espacios en blanco', 'error') </script>";
             }
         }
-        //**************************************************************************************************************
-
         private const string initVector = "huellitasptc2024";
         // This constant is used to determine the keysize of the encryption algorithm
         private const int keysize = 256;
@@ -91,4 +87,6 @@ namespace Huellitas_ptc
             return Convert.ToBase64String(cipherTextBytes);
         }
     }
-}
+    }
+
+

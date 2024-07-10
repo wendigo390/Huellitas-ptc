@@ -19,6 +19,7 @@ namespace Huellitas_ptc
             {
                 Session.Abandon();
             }
+            cargarCarrusell();
 
 
 
@@ -39,6 +40,12 @@ namespace Huellitas_ptc
             Session.Remove("usuario");
             Response.Redirect("02_Login.aspx");
 
+        }
+        protected void cargarCarrusell()
+        {
+            string[] datos = conexiones.ObtenerImagenes();
+            IndicatorsLiteral.Text = datos[1];
+            ImagesLiteral.Text = datos[0];
         }
     }
 }
