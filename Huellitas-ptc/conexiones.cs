@@ -9,6 +9,8 @@ namespace Huellitas_ptc
 {
     public class conexiones
     {
+        public static MySqlConnection conexion = new MySqlConnection("Server= 127.0.0.1; database=ptc; Uid=root; pwd=Info2024/*-;");
+
         //**************************** Método para verificar si se repiten los usuario ****************************
         public static int UsuariosRepetidos(string usuario, string contra, string nombre, string apellido, string correo)
         {
@@ -103,6 +105,49 @@ namespace Huellitas_ptc
             retorno[0] = imagenes;
             retorno[1] = indicators;
             return retorno;
+        }
+
+        //**************************************METODO PARA INGRESAR TUS MASCOTAS****************************************
+
+        public static int Add_pets(string nombre, string edad, string peso, string imagen, string raza, string descripcion)
+        {
+            conexion.Open();
+            int retorno = 0;
+            MySqlCommand comando = new MySqlCommand("INSERT INTO mascota (nombre, edad, peso, imagen, raza, descripcion) VALUES (@nombre, @edad, @peso, @imagen, @raza, @descripcion);", conexion);
+            comando.Parameters.AddWithValue("@nombre", nombre);
+            comando.Parameters.AddWithValue("@edad", edad);
+            comando.Parameters.AddWithValue("@peso", peso);
+            comando.Parameters.AddWithValue("@imagen", imagen);
+            comando.Parameters.AddWithValue("@raza", raza);
+            comando.Parameters.AddWithValue("@descripcion", descripcion);
+
+
+
+            comando.Prepare();
+            retorno = comando.ExecuteNonQuery();
+            conexion.Close();
+            return retorno;
+        }
+        //**********************************************Mostrar Mascotas******************************************************
+        public static DataTable Fetch_Products(bool imgElement)
+        {
+            conexion.Open();
+            MySqlDataAdapter DA = new MySqlDataAdapter();
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM mascota;", conexion);
+            DA.SelectCommand = cmd;
+            DataTable DT = new DataTable();
+
+            DA.Fill(DT);
+
+            if (imgElement)
+            {
+                foreach (DataRow row in DT.Rows)
+                {
+                    row["imagen"] = "<img width='100px' class='thumbnail' src='./mascotas/" + row["imagen"] + "' />";
+                }
+            }
+            conexion.Close();
+            return DT;
         }
     }
 }
