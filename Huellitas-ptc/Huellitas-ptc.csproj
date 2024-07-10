@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="01_Registro.aspx" />
+    <Content Include="01_RegistroEsp.aspx" />
     <Content Include="02_Login.aspx" />
     <Content Include="03_RecuperarCuenta.aspx" />
     <Content Include="04_Adopt.aspx" />
@@ -1893,6 +1894,13 @@
     </Compile>
     <Compile Include="01_Registro.aspx.designer.cs">
       <DependentUpon>01_Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="01_RegistroEsp.aspx.cs">
+      <DependentUpon>01_RegistroEsp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="01_RegistroEsp.aspx.designer.cs">
+      <DependentUpon>01_RegistroEsp.aspx</DependentUpon>
     </Compile>
     <Compile Include="02_Login.aspx.cs">
       <DependentUpon>02_Login.aspx</DependentUpon>

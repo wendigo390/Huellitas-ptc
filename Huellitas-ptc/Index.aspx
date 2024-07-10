@@ -52,7 +52,7 @@
                     <div class="form-group">&nbsp;</div>
                     <div style="position: absolute; left: 1200px; right: 1200px;">
 
-                        <a href="01_Registro.aspx">
+                        <a href="01_RegistroEsp.aspx">
                             <img src="imagen1/mundo.png" /></a>
                     </div>
                 </div>
