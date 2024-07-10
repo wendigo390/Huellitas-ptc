@@ -61,18 +61,18 @@
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
             <div class="container">
-                <a class="navbar-brand" href="Index.aspx"><span class="flaticon-pawprint-1 mr-2"></span>Huellitas</a>
+                <a class="navbar-brand" href="IndexEsp.aspx"><span class="flaticon-pawprint-1 mr-2"></span>Huellitas</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="fa fa-bars"></span>Menu
                 </button>
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active"><a href="Index.aspx" class="nav-link">Inicio</a></li>
-                        <li class="nav-item"><a href="04_Adopt.aspx" class="nav-link">Adoptar</a></li>
-                        <li class="nav-item"><a href="05_GivingAdoption.aspx" class="nav-link">Dar en Adopción</a></li>
-                        <li class="nav-item"><a href="06_Shop.aspx" class="nav-link">Tienda</a></li>
-                        <li class="nav-item"><a href="07_Team.aspx" class="nav-link">Equipo</a></li>
-                        <li class="nav-item"><a href="08_Contact.aspx" class="nav-link">Contacto</a></li>
+                        <li class="nav-item active"><a href="IndexEsp.aspx" class="nav-link">Inicio</a></li>
+                        <li class="nav-item"><a href="04_AdoptEsp.aspx" class="nav-link">Adoptar</a></li>
+                        <li class="nav-item"><a href="05_GivingAdoptionEsp.aspx" class="nav-link">Dar en Adopción</a></li>
+                        <li class="nav-item"><a href="06_ShopEsp.aspx" class="nav-link">Tienda</a></li>
+                        <li class="nav-item"><a href="07_TeamEsp.aspx" class="nav-link">Equipo</a></li>
+                        <li class="nav-item"><a href="08_ContactEsp.aspx" class="nav-link">Contacto</a></li>
 
                     </ul>
                     <div class="form-group">&nbsp;</div>

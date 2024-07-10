@@ -81,6 +81,7 @@
     <Content Include="05_GivingAdoption.aspx" />
     <Content Include="06_Shop.aspx" />
     <Content Include="07_Team.aspx" />
+    <Content Include="07_TeamEsp.aspx" />
     <Content Include="08_Contact.aspx" />
     <Content Include="1\pata.png" />
     <Content Include="1\pata1.png" />
@@ -1961,6 +1962,13 @@
     </Compile>
     <Compile Include="07_Team.aspx.designer.cs">
       <DependentUpon>07_Team.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="07_TeamEsp.aspx.cs">
+      <DependentUpon>07_TeamEsp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="07_TeamEsp.aspx.designer.cs">
+      <DependentUpon>07_TeamEsp.aspx</DependentUpon>
     </Compile>
     <Compile Include="08_Contact.aspx.cs">
       <DependentUpon>08_Contact.aspx</DependentUpon>
