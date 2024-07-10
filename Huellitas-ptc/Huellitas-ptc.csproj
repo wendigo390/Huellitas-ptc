@@ -74,7 +74,9 @@
     <Content Include="01_Registro.aspx" />
     <Content Include="01_RegistroEsp.aspx" />
     <Content Include="02_Login.aspx" />
+    <Content Include="02_LogineEsp.aspx" />
     <Content Include="03_RecuperarCuenta.aspx" />
+    <Content Include="03_RecuperarCuentaEsp.aspx" />
     <Content Include="04_Adopt.aspx" />
     <Content Include="05_GivingAdoption.aspx" />
     <Content Include="06_Shop.aspx" />
@@ -1861,6 +1863,7 @@
     <Content Include="imagen\staff-7.jpg" />
     <Content Include="imagen\staff-8.jpg" />
     <Content Include="Index.aspx" />
+    <Content Include="IndexEsp.aspx" />
     <Content Include="js\bootstrap-datepicker.js" />
     <Content Include="js\bootstrap.min 1.js" />
     <Content Include="js\bootstrap.min.js" />
@@ -1909,12 +1912,26 @@
     <Compile Include="02_Login.aspx.designer.cs">
       <DependentUpon>02_Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="02_LogineEsp.aspx.cs">
+      <DependentUpon>02_LogineEsp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="02_LogineEsp.aspx.designer.cs">
+      <DependentUpon>02_LogineEsp.aspx</DependentUpon>
+    </Compile>
     <Compile Include="03_RecuperarCuenta.aspx.cs">
       <DependentUpon>03_RecuperarCuenta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="03_RecuperarCuenta.aspx.designer.cs">
       <DependentUpon>03_RecuperarCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="03_RecuperarCuentaEsp.aspx.cs">
+      <DependentUpon>03_RecuperarCuentaEsp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="03_RecuperarCuentaEsp.aspx.designer.cs">
+      <DependentUpon>03_RecuperarCuentaEsp.aspx</DependentUpon>
     </Compile>
     <Compile Include="04_Adopt.aspx.cs">
       <DependentUpon>04_Adopt.aspx</DependentUpon>
@@ -1995,6 +2012,13 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IndexEsp.aspx.cs">
+      <DependentUpon>IndexEsp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndexEsp.aspx.designer.cs">
+      <DependentUpon>IndexEsp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SuperAdmin.aspx.cs">
