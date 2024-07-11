@@ -9,7 +9,7 @@ namespace Huellitas_ptc
 {
     public class conexiones
     {
-        public static MySqlConnection conexion = new MySqlConnection("Server= 127.0.0.1; database=ptc; Uid=root; pwd=Info2024/*-;");
+        public static MySqlConnection conexion = new MySqlConnection("Server= 127.0.0.1; database=ptc; Uid=root; pwd=Info2025/*-;");
 
         //**************************** Método para verificar si se repiten los usuario ****************************
         public static int UsuariosRepetidos(string usuario, string contra, string nombre, string apellido, string correo)
@@ -57,8 +57,8 @@ namespace Huellitas_ptc
             return retorno;
         }
 
-            //**************************** Método para agregar imagen ****************************
-            public static int AgregarImagen(string foto)
+        //**************************** Método para agregar imagen ****************************
+        public static int AgregarImagen(string foto)
         {
             MySqlConnection conn = datos.ObtenerConexion();
             int retorno = 0;
@@ -111,7 +111,7 @@ namespace Huellitas_ptc
 
         public static int Add_pets(string nombre, string edad, string peso, string imagen, string raza, string descripcion)
         {
-            conexion.Open();
+            MySqlConnection conexion = datos.ObtenerConexion();
             int retorno = 0;
             MySqlCommand comando = new MySqlCommand("INSERT INTO mascota (nombre, edad, peso, imagen, raza, descripcion) VALUES (@nombre, @edad, @peso, @imagen, @raza, @descripcion);", conexion);
             comando.Parameters.AddWithValue("@nombre", nombre);
@@ -131,7 +131,7 @@ namespace Huellitas_ptc
         //**********************************************Mostrar Mascotas******************************************************
         public static DataTable Fetch_Products(bool imgElement)
         {
-            conexion.Open();
+            MySqlConnection conexion = datos.ObtenerConexion();
             MySqlDataAdapter DA = new MySqlDataAdapter();
             MySqlCommand cmd = new MySqlCommand("SELECT * FROM mascota;", conexion);
             DA.SelectCommand = cmd;
@@ -148,6 +148,22 @@ namespace Huellitas_ptc
             }
             conexion.Close();
             return DT;
+        }
+        //******************************************** Metodo Productos*************************************************************
+        public static int Add_Product(string product, double price, int quantity, string image)
+        {
+            MySqlConnection conexion = datos.ObtenerConexion();
+            int retorno = 0;
+            MySqlCommand comando = new MySqlCommand("INSERT INTO productos (Name, Price, Quantity, Image) VALUES (@product, @price, @quantity, @image);", conexion);
+            comando.Parameters.AddWithValue("@product", product);
+            comando.Parameters.AddWithValue("@price", price);
+            comando.Parameters.AddWithValue("@quantity", quantity);
+            comando.Parameters.AddWithValue("@image", image);
+
+            comando.Prepare();
+            retorno = comando.ExecuteNonQuery();
+            conexion.Close();
+            return retorno;
         }
     }
 }

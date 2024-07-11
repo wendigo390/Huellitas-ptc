@@ -71,6 +71,11 @@
                             <i class="ni ni-planet text-blue"></i>Add Images
                         </a>
                     </li>
+                     <li class="nav-item">
+     <a class="nav-link " href="AgregarProducto1.aspx">
+         <i class="ni ni-planet text-blue"></i>Productos
+     </a>
+ </li>
                     <li class="nav-item">
                        <%-- <a class="nav-link " href="SuperAdmin_AdminAdd_02.aspx">
                             <i class="ni ni-single-02 text-yellow"></i>Add Admin
