@@ -57,8 +57,8 @@ namespace Huellitas_ptc
             return retorno;
         }
 
-            //**************************** Método para agregar imagen ****************************
-            public static int AgregarImagen(string foto)
+        //**************************** Método para agregar imagen ****************************
+        public static int AgregarImagen(string foto)
         {
             MySqlConnection conn = datos.ObtenerConexion();
             int retorno = 0;
@@ -133,6 +133,26 @@ namespace Huellitas_ptc
         {
             conexion.Open();
             MySqlDataAdapter DA = new MySqlDataAdapter();
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM productos;", conexion);
+            DA.SelectCommand = cmd;
+            DataTable DT = new DataTable();
+
+            DA.Fill(DT);
+
+            if (imgElement)
+            {
+                foreach (DataRow row in DT.Rows)
+                {
+                    row["Imagen"] = "<img width='100px' class='thumbnail' src='./productos/" + row["Imagen"] + "' />";
+                }
+            }
+            conexion.Close();
+            return DT;
+        }
+        public static DataTable Fetch_Pets(bool imgElement)
+        {
+            conexion.Open();
+            MySqlDataAdapter DA = new MySqlDataAdapter();
             MySqlCommand cmd = new MySqlCommand("SELECT * FROM mascota;", conexion);
             DA.SelectCommand = cmd;
             DataTable DT = new DataTable();
@@ -148,6 +168,21 @@ namespace Huellitas_ptc
             }
             conexion.Close();
             return DT;
+        }
+        public static int Add_Product(string product, double price, int quantity, string image)
+        {
+            MySqlConnection conexion = datos.ObtenerConexion();
+            int retorno = 0;
+            MySqlCommand comando = new MySqlCommand("INSERT INTO productos (Name, Price, Quantity, Image) VALUES (@product, @price, @quantity, @image);", conexion);
+            comando.Parameters.AddWithValue("@product", product);
+            comando.Parameters.AddWithValue("@price", price);
+            comando.Parameters.AddWithValue("@quantity", quantity);
+            comando.Parameters.AddWithValue("@image", image);
+
+            comando.Prepare();
+            retorno = comando.ExecuteNonQuery();
+            conexion.Close();
+            return retorno;
         }
     }
 }
