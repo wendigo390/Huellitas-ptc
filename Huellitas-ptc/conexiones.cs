@@ -9,7 +9,7 @@ namespace Huellitas_ptc
 {
     public class conexiones
     {
-        public static MySqlConnection conexion = new MySqlConnection("Server= 127.0.0.1; database=ptc; Uid=root; pwd=Info2025/*-;");
+        public static MySqlConnection conexion = new MySqlConnection("Server= 127.0.0.1; database=ptc; Uid=root; pwd=Info2024/*-;");
 
         //**************************** Método para verificar si se repiten los usuario ****************************
         public static int UsuariosRepetidos(string usuario, string contra, string nombre, string apellido, string correo)
